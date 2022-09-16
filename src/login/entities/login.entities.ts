@@ -1,10 +1,13 @@
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 @Entity()
 export class login {
-  @PrimaryGeneratedColumn()
-  id: number;
-  @Column()
+  @PrimaryGeneratedColumn({
+    type: 'integer',
+    name: 'u_id',
+  })
+  u_id: number;
+  @Column('varchar', { nullable: true, name: 'email' })
   email: string;
-  @Column()
-  pass: string;
+  @Column('varchar', { nullable: true, name: 'u_password' })
+  u_password: string;
 }
